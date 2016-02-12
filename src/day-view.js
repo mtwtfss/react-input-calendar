@@ -19,11 +19,14 @@ class DayView extends React.Component {
         minDate: React.PropTypes.any,
         maxDate: React.PropTypes.any,
         setDate: React.PropTypes.func,
-        nextView: React.PropTypes.func
+        nextView: React.PropTypes.func,
+        weekdays: React.PropTypes.arrayOf(React.PropTypes.string)
     }
 
     getDaysTitles() {
-        if (moment.locale() === 'de') {
+        if (this.props.weekdays) {
+          return this.props.weekdays;
+        } else if (moment.locale() === 'de') {
           return 'Mo_Di_Mi_Do_Fr_Sa_So'.split('_').map(item => ({ val: item, label: item }))
         }
         return moment.weekdaysMin().map(item => ({ val: item, label: item }))

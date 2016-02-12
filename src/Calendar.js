@@ -33,7 +33,8 @@ module.exports = React.createClass({
         placeholder: React.PropTypes.string,
         hideTouchKeyboard: React.PropTypes.bool,
         hideIcon: React.PropTypes.bool,
-        alwaysVisible: React.PropTypes.bool
+        alwaysVisible: React.PropTypes.bool,
+        weekdays: React.PropTypes.arrayOf(React.PropTypes.string)
     },
 
     getInitialState: function() {
@@ -42,6 +43,7 @@ module.exports = React.createClass({
             maxDate = this.props.maxDate ? moment(toDate(this.props.maxDate)) : null,
             inputFieldId = this.props.inputFieldId ? this.props.inputFieldId : null,
             inputFieldClass = this.props.inputFieldClass ? this.props.inputFieldClass : 'input-calendar-value',
+            weekdays = this.props.weekdays || null,
             format = this.props.format || 'MM-DD-YYYY',
             minView = parseInt(this.props.minView, 10) || 0,
             alwaysVisible = this.props.alwaysVisible || false,
@@ -58,7 +60,8 @@ module.exports = React.createClass({
             minView: minView,
             currentView: minView || 0,
             alwaysVisible: alwaysVisible,
-            isVisible: alwaysVisible
+            isVisible: alwaysVisible,
+            weekdays: weekdays
         };
     },
 
@@ -259,7 +262,8 @@ module.exports = React.createClass({
                     minDate={this.state.minDate}
                     maxDate={this.state.maxDate}
                     setDate={this.setDate}
-                    nextView={this.nextView} />;
+                    nextView={this.nextView}
+                    weekdays={this.state.weekdays} />;
                 break;
             case 1:
                 view = <MonthsView
