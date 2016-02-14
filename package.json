@@ -1,7 +1,7 @@
 {
   "name": "mtwtfss-calendar",
   "description": "Datepicker widget react component",
-  "version": "0.1.0",
+  "version": "0.4.1",
   "scripts": {
     "start": "webpack-dev-server --port 3030",
     "test": "karma start",

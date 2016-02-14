@@ -1,5 +1,5 @@
 import React from 'react'
-import Calendar from '../dist/react-input-calendar'
+import Calendar from '../dist/mtwtfss-calendar'
 
 export default class App extends React.Component {
   render() {
