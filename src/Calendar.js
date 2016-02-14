@@ -34,7 +34,8 @@ module.exports = React.createClass({
         hideTouchKeyboard: React.PropTypes.bool,
         hideIcon: React.PropTypes.bool,
         alwaysVisible: React.PropTypes.bool,
-        weekdays: React.PropTypes.arrayOf(React.PropTypes.string)
+        weekdays: React.PropTypes.arrayOf(React.PropTypes.string),
+        weekStartsOn: React.PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6])
     },
 
     getInitialState: function() {
@@ -44,6 +45,7 @@ module.exports = React.createClass({
             inputFieldId = this.props.inputFieldId ? this.props.inputFieldId : null,
             inputFieldClass = this.props.inputFieldClass ? this.props.inputFieldClass : 'input-calendar-value',
             weekdays = this.props.weekdays || null,
+            weekStartsOn = this.props.weekStartsOn || null,
             format = this.props.format || 'MM-DD-YYYY',
             minView = parseInt(this.props.minView, 10) || 0,
             alwaysVisible = this.props.alwaysVisible || false,
@@ -61,7 +63,8 @@ module.exports = React.createClass({
             currentView: minView || 0,
             alwaysVisible: alwaysVisible,
             isVisible: alwaysVisible,
-            weekdays: weekdays
+            weekdays: weekdays,
+            weekStartsOn: weekStartsOn
         };
     },
 
@@ -263,7 +266,8 @@ module.exports = React.createClass({
                     maxDate={this.state.maxDate}
                     setDate={this.setDate}
                     nextView={this.nextView}
-                    weekdays={this.state.weekdays} />;
+                    weekdays={this.state.weekdays}
+                    weekStartsOn={this.state.weekStartsOn} />;
                 break;
             case 1:
                 view = <MonthsView

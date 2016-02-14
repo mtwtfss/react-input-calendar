@@ -23,8 +23,8 @@ const config = {
     demo: path.join(ROOT_PATH, 'demo'),
     tests: path.join(ROOT_PATH, 'tests')
   },
-  filename: 'react-input-calendar',
-  library: 'react-input-calendar'
+  filename: 'mtwtfss-calendar',
+  library: 'mtwtfss-calendar'
 };
 const CSS_PATHS = [
   config.paths.demo,

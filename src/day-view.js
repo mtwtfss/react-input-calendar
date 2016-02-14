@@ -20,7 +20,8 @@ class DayView extends React.Component {
         maxDate: React.PropTypes.any,
         setDate: React.PropTypes.func,
         nextView: React.PropTypes.func,
-        weekdays: React.PropTypes.arrayOf(React.PropTypes.string)
+        weekdays: React.PropTypes.arrayOf(React.PropTypes.string),
+        weekStartsOn: React.PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6])
     }
 
     getDaysTitles() {
@@ -93,6 +94,12 @@ class DayView extends React.Component {
     }
 
     render() {
+        if (this.props.weekStartsOn) {
+          moment.locale(moment.locale(), {
+            week: { dow: this.props.weekStartsOn }
+          });
+        }
+
         let titles = this.getDaysTitles().map((item, i) => {
             return <Cell classes="day title" key={i} value={item.label} />
         }), _class

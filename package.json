@@ -1,9 +1,7 @@
 {
-  "name": "react-input-calendar",
+  "name": "mtwtfss-calendar",
   "description": "Datepicker widget react component",
-  "author": "Rudeg <rudenko.sergey92@gmail.com> (https://github.com/Rudeg)",
-  "user": "Rudeg",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "scripts": {
     "start": "webpack-dev-server --port 3030",
     "test": "karma start",
@@ -19,7 +17,7 @@
     "postpublish": "npm run gh-pages && npm run deploy-gh-pages",
     "postinstall": "node lib/post_install.js"
   },
-  "main": "dist/react-input-calendar.js",
+  "main": "dist/mtwtfss-calendar.js",
   "dependencies": {
     "classnames": "^2.2.1"
   },
@@ -74,11 +72,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rudeg/react-input-calendar"
+    "url": "https://github.com/mtwtfss/react-input-calendar"
   },
-  "homepage": "http://rudeg.github.io/react-input-calendar/",
   "bugs": {
-    "url": "https://github.com/Rudeg/react-input-calendar/issues"
+    "url": "https://github.com/mtwtfss/react-input-calendar/issues"
   },
   "keywords": [
     "react",
