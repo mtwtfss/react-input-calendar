@@ -13761,7 +13761,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        key: 'getDaysTitles',
 	        value: function getDaysTitles() {
 	            if (this.props.weekdays) {
-	                return this.props.weekdays;
+	                return this.props.weekdays.map(function (item) {
+	                    return { val: item, label: item };
+	                });
 	            } else if (_moment2['default'].locale() === 'de') {
 	                return 'Mo_Di_Mi_Do_Fr_Sa_So'.split('_').map(function (item) {
 	                    return { val: item, label: item };

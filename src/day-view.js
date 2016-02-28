@@ -26,7 +26,7 @@ class DayView extends React.Component {
 
     getDaysTitles() {
         if (this.props.weekdays) {
-          return this.props.weekdays;
+          return this.props.weekdays.map(item => ({ val: item, label: item }))
         } else if (moment.locale() === 'de') {
           return 'Mo_Di_Mi_Do_Fr_Sa_So'.split('_').map(item => ({ val: item, label: item }))
         }
